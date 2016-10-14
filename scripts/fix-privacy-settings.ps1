@@ -1,6 +1,8 @@
+#   Name: fix-privacy-settings.ps1
+#
 #   Description:
-# This script will try to fix many of the privacy settings for the user. This
-# is work in progress!
+#      This script will try to fix many of the privacy settings for the user. This
+#      is work in progress!
 
 Import-Module -DisableNameChecking $PSScriptRoot\..\lib\force-mkdir.psm1
 Import-Module -DisableNameChecking $PSScriptRoot\..\lib\take-own.psm1

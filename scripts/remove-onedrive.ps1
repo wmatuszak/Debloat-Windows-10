@@ -1,5 +1,7 @@
+#   Name: remove-onedrive.ps1
+#
 #   Description:
-# This script will remove and disable OneDrive integration.
+#      This script will remove and disable OneDrive integration.
 
 Import-Module -DisableNameChecking $PSScriptRoot\..\lib\force-mkdir.psm1
 Import-Module -DisableNameChecking $PSScriptRoot\..\lib\take-own.psm1

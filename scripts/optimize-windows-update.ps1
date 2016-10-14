@@ -1,7 +1,17 @@
-#   Description:
-# This script optimizes Windows updates by disabling automatic download and
-# seeding updates to other computers.
+#   Name: optimize-windows-update.ps1
 #
+#   Params:
+#      -DisableAutomaticDriverUpdates - does what it says
+#
+#   Description:
+#      This script optimizes Windows updates by disabling automatic download and
+#      seeding updates to other computers.
+#
+
+Param(
+  [switch]$DisableAutomaticDriverUpdates
+)
+
 Import-Module -DisableNameChecking $PSScriptRoot\..\lib\force-mkdir.psm1
 
 echo "Disable automatic download and installation of Windows updates"
@@ -15,8 +25,11 @@ echo "Disable seeding of updates to other computers via Group Policies"
 force-mkdir "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
 sp "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization" "DODownloadMode" 0
 
-#echo "Disabling automatic driver update"
-#sp "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching" "SearchOrderConfig" 0
+if(DisableAutomaticDriverUpdates)
+{
+    echo "Disabling automatic driver update"
+    sp "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching" "SearchOrderConfig" 0
+}
 
 echo "Disable 'Updates are available' message"
 takeown /F "$env:WinDIR\System32\MusNotification.exe"

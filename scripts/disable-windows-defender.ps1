@@ -1,5 +1,7 @@
+#   Name: disable-windows-defender.ps1
+#
 #   Description:
-# This script disables Windows Defender.
+#      This script disables Windows Defender.
 
 Import-Module -DisableNameChecking $PSScriptRoot\..\lib\force-mkdir.psm1
 
