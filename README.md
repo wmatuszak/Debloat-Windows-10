@@ -3,12 +3,12 @@
 This project collects Powershell scripts which help to *debloat* Windows 10,
 tweak common settings and install basic software components.
 
-I develop those scripts on a Windows 10 Professional 64-Bit (English) virtual
-machine. Please let me know if you encounter any issues with other Windows 10
-versions.
+This was forked from W4RH4WK's original work and tweaked to allow for commandline
+arguments and some more flexability without editing the scripts everytime.
 
-Home Edition and different languages are not supported. Let me know of you fork
-this repo for fixing Home Edition or a different language.
+These are developed and tested on Windows 10 Professional 64 bit. 
+
+W4RH4WK'S Original Warning:
 
 Note that **there is no undo**, I recommend only using these scripts on a fresh
 install (including updates). Test everything after running them before
@@ -19,7 +19,7 @@ work after future updates since I cannot predict what Microsoft will do next.
 
 Code located in the `master` branch is under development (for now).
 
-- [Download [zip]](https://github.com/W4RH4WK/Debloat-Windows-10/archive/master.zip)
+- [Download [zip]](https://github.com/wmatuszak/Debloat-Windows-10/archive/master.zip)
 
 ## Execution
 
@@ -41,17 +41,9 @@ Unblock PowerShell scripts and modules within this directory:
 
 ## Startmenu
 
-In the past I included small fixes to make the startmenu more usable, like
-removing default tiles, disabling web search and so on. This is no longer the
-case since I am that fed up with it. This fucking menu breaks for apparently
-know reason, is slow, is a pain to configure / script and even shows ads out of
-the box!
-
-Please replace it with something better, either use [Classic Shell] or [Start
-is Back], but stop using that shit.
-
-[Classic Shell]: <http://www.classicshell.net/>
-[Start is Back]: <http://startisback.com/>
+If you have issues with dead links you cannot remove in your startmenu, the reset-start-menu.ps1 is 
+what you will want to use. Do not use this unless you need it. It will flag every application as a 
+newly installed one.
 
 ## Known Issues
 
@@ -89,6 +81,7 @@ send me a pull request.
 
 ### Thanks To
 
+- [W4RH4WK](https://github.com/W4RH4WK)
 - [10se1ucgo](https://github.com/10se1ucgo)
 - [Plumebit](https://github.com/Plumebit)
 - [aramboi](https://github.com/aramboi)
