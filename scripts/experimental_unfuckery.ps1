@@ -16,6 +16,8 @@ Param(
   [switch]$Search,
   [switch]$Defender,
   [switch]$Maps,
+  [switch]$OneDrive,
+  [switch]$Experimental,
   [switch]$DryRun,
   [array]$Exclude = $null
 )
@@ -32,7 +34,6 @@ $needles = @(
     "Feedback"
     "Flash"
     "Gaming"
-    "OneDrive"
 )
 
 $search_needles = @(
@@ -47,14 +48,22 @@ $map_needles = @(
     "Maps"
 )
 
+$onedrive_needles = @(
+    "OneDrive"
+)
+
+$experimental_needles = @(
+    "ContentDeliveryManager" # This removes the subsystem that provides the start menu suggestions. Not sure if this causes other issues yet.
+	"Wallet"
+)
+
+
 <#
 $unknown_status_needles = @(
 
     "Anytime"
     "Browser"
-    "ContentDeliveryManager" # This removes the subsystem that provides the start menu suggestions. Not sure if this causes other issues yet.
     "InternetExplorer"
-    "Wallet"
 )
 #>
 
@@ -68,6 +77,8 @@ $known_unstable_needles = @(
 if($Search){$needles += $search_needles}
 if($Defender){$needles += $defender_needles}
 if($Maps){$needles += $map_needles}
+if($OneDrive){$needles += $onedrive_needles}
+if($Experimental){$needles += $experimental_needles}
 
 if($DryRun) { echo "Listing system apps to remove" }
 else { echo "Force removing system apps" }

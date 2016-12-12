@@ -86,8 +86,8 @@ foreach ($service in $services) {
     
         echo "Trying to disable $service"
         if(-not $DryRun) {
-            $svcreg = ls ("HKLM:\SYSTEM\CurrentControlSet\Services\" + $service)
-            foreach($reg in $svcreg){sp $reg "Start" 4}
+			$svcreg = "HKLM:\SYSTEM\CurrentControlSet\Services\" + $service
+			sp $svcreg "Start" 4
         }
     }
 }
