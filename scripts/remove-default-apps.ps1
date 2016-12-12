@@ -19,7 +19,7 @@ Param(
 
 Import-Module -DisableNameChecking $PSScriptRoot\..\lib\take-own.psm1
 
-echo "Elevating priviledges for this process"
+echo "Elevating privileges for this process"
 do {} until (Elevate-Privileges SeTakeOwnershipPrivilege)
 
 $apps = @(
@@ -76,6 +76,7 @@ $apps = @(
     "TuneIn.TuneInRadio"
     "GAMELOFTSA.Asphalt8Airborne"
     "TheNewYorkTimes.NYTCrossword"
+    "DB6EA5DB.CyberLinkMediaSuiteEssentials"
 )
 
 $system_apps = @(
