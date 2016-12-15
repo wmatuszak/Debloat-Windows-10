@@ -77,6 +77,8 @@ $apps = @(
     "GAMELOFTSA.Asphalt8Airborne"
     "TheNewYorkTimes.NYTCrossword"
     "DB6EA5DB.CyberLinkMediaSuiteEssentials"
+    "Facebook.Facebook"
+    "flaregamesGmbH.RoyalRevolt2"
 )
 
 $system_apps = @(
